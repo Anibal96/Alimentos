@@ -50,8 +50,8 @@ public class Usuario
                                     + (grasasDelUsuario * 9);
 		float totalGramos = proteinasDelUsuario + carboHidratosDelUsuario + grasasDelUsuario;
 		porcentajeDeProteinas = (totalGramos * proteinasDelUsuario)/100;
-		porcentajeDeCarboHidratos = (totalGramos * grasasDelUsuario)/100;
-		porcentajeDeGrasas = (totalGramos * proteinasDelUsuario)/100;
+		porcentajeDeCarboHidratos = (totalGramos * carboHidratosDelUsuario)/100;
+		porcentajeDeGrasas = (totalGramos * grasasDelUsuario)/100;
     }
     
     /**
