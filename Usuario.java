@@ -17,6 +17,12 @@ public class Usuario
     private float grasasDelUsuario;
     //Cantidad total de calorias ingeridas por el usuario.
     private float caloriasTotalesDelUsuario;
+	//Porcentaje de proteinas
+	private float porcentajeDeProteinas;
+	//Porcentaje de carboHidratos
+	private float porcentajeDeCarboHidratos;
+	//Porcentaje de grasas
+	private float porcentajeDeGrasas;
     /**
      * Constructor for objects of class Usuario
      */
@@ -27,6 +33,9 @@ public class Usuario
         carboHidratosDelUsuario = 0;
         grasasDelUsuario = 0;
         caloriasTotalesDelUsuario = 0;
+		porcentajeDeProteinas = 0;
+		porcentajeDeCarboHidratos = 0;
+		porcentajeDeGrasas = 0;
     }
     
     /**
@@ -39,6 +48,10 @@ public class Usuario
         grasasDelUsuario = grasasDelUsuario + (((comida.getGrasas())/100)*cantidad);
         caloriasTotalesDelUsuario = (proteinasDelUsuario * 4) + (carboHidratosDelUsuario * 4) 
                                     + (grasasDelUsuario * 9);
+		float totalGramos = proteinasDelUsuario + carboHidratosDelUsuario + grasasDelUsuario;
+		porcentajeDeProteinas = (totalGramos * proteinasDelUsuario)/100;
+		porcentajeDeCarboHidratos = (totalGramos * grasasDelUsuario)/100;
+		porcentajeDeGrasas = (totalGramos * proteinasDelUsuario)/100;
     }
     
     /**
@@ -47,9 +60,9 @@ public class Usuario
     public void mostrarDatos()
     {
         System.out.println("Nombre:                                    " + nombre);
-        System.out.println("Gramos totales de proteinas ingeridos:     " + proteinasDelUsuario);
-        System.out.println("Gramos totales de carbohidratos ingeridos: " + carboHidratosDelUsuario);
-        System.out.println("Gramos totales de grasas ingeridos:        " + grasasDelUsuario);
+        System.out.println("Gramos totales de proteinas ingeridos:     " + proteinasDelUsuario + " ( " + porcentajeDeProteinas + "% )");
+        System.out.println("Gramos totales de carbohidratos ingeridos: " + carboHidratosDelUsuario + " ( " + porcentajeDeCarboHidratos + "% )");
+        System.out.println("Gramos totales de grasas ingeridos:        " + grasasDelUsuario + " ( " + porcentajeDeGrasas + "% )");
         System.out.println("Calorias totales ingeridas:                " + caloriasTotalesDelUsuario);
     }
 }
