@@ -1,15 +1,14 @@
-
 /**
  * Write a description of class Alimento here.
  * 
- * @author (Anibal) 
+ * @author (your name) 
  * @version (a version number or a date)
  */
 public class Alimento
 {
     //Guarda el nombre del alimento
     private String nombre;
-    //Guarda las proteÃ­nas del alimento
+    //Guarda las proteínas del alimento
     private float proteinas;
     //Guarda los carbohidratos del alimento
     private float carbohidratos;
@@ -28,9 +27,41 @@ public class Alimento
         this.grasas = grasas;
         calorias = (proteinas * 4) + (carbohidratos * 4) + (grasas * 9);
     }
+    
+    /**
+     * Nos devuelve los gramos de proteinas que tiene el alimento
+     */
+    public float getProteinas() 
+    {
+        return proteinas;
+    }
+    
+    /**
+     * Nos devuelve los gramos de grasas que tiene el alimento
+     */
+    public float getGrasas() 
+    {
+        return grasas;
+    }
+    
+    /**
+     * Nos devuelve los gramos de carbohidratos que tiene el alimento
+     */
+    public float getCarbohidratos() 
+    {
+        return carbohidratos;
+    }
+    
+    /**
+     * Nos devuelve las calorías que tiene el alimento
+     */
+    public float getCalorias() 
+    {
+        return calorias;
+    }
 
     /**
-     * Este Metodo nos muestra los valores de los distintos componentes del alimento.
+     * Este método nos muestra los valores de los distintos componentes del alimento 
      */
     public void muestraDatos()
     {
@@ -39,10 +70,10 @@ public class Alimento
         System.out.println("Carbohidratos por cada 100 gramos: " + carbohidratos);
         System.out.println("Grasas por cada 100 gramos: " + grasas);
         System.out.println("Calorias: " + calorias);
-        String mayoritario = "proteinas";
+        String mayoritario = "proteínas";
         float mayor = proteinas;
         if (carbohidratos == mayor) {
-            mayoritario = "carbohidratos, proteinas";
+            mayoritario = "carbohidratos, proteínas";
         }
         else if (carbohidratos > mayor) {
             mayor = carbohidratos;
@@ -55,26 +86,5 @@ public class Alimento
             mayoritario = "grasas";
         }
         System.out.println("Componente/s mayoritario/s: " + mayoritario);
-    }
-    /**
-     * Devuelve las proteinas del alimento.
-     */
-    public float getProteinas()
-    {
-        return proteinas;
-    }
-    /**
-     * Devuelve las carbo hidratos del alimento.
-     */
-    public float getCarboHidratos()
-    {
-        return carbohidratos;
-    }
-    /**
-     * Devuelve las grasas del alimento.
-     */
-    public float getGrasas()
-    {
-        return grasas;
     }
 }
