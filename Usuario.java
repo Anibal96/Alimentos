@@ -147,8 +147,34 @@ public class Usuario
         {
             System.out.println(" El usuario no ha comido ese alimento");
         }
+		else if(contador == 1){
+			System.out.println("El usuario a comido " + nombreAlimento + " "+ contador + " vez");
+		}
 		else{
-			System.out.println("El usuario a comido " + nombreAlimento + " "+ contador + " vez/veces");
+			System.out.println("El usuario a comido " + nombreAlimento + " "+ contador + " veces");
 		}
     }
+	public void nombreDeLosAlimentosConsumidos()
+	{
+		for (Alimento alimentosConsumidos : alimentos)
+		{
+			int contador = 0;
+			Alimento alimentoConsumidoActual = alimentosConsumidos;
+			for (Alimento alimentosConsumidos1 : alimentos)
+			{
+				if (alimentoConsumidoActual.getNombre().contains(alimentosConsumidos1.getNombre()))
+            	{
+                	contador = contador +1;
+            	}
+			}
+			if (contador > 1)
+			{
+				System.out.println("El alimento " + alimentoConsumidoActual.getNombre() + " lo ha comido " + contador + " veces.");
+			}
+			else
+			{
+				System.out.println("El alimento "+ alimentoConsumidoActual.getNombre() +" no se ha consumido mas de 1 vez");
+			}
+		}
+	}
 }
