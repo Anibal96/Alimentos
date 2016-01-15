@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class Usuario
 {
     //nombre del usuario
@@ -14,6 +15,8 @@ public class Usuario
     private String nombreDelAlimentoMasCalorico;
     //calorias del alimento que mas calorias ha aportado hasta ahora
     private float caloriasDelAlimentoMasCalorico;
+    //Alimentos consumidos por el usuario.
+    private ArrayList<Alimento> alimentos;
 
     /**
     *Constructor de la clase usuario
@@ -27,6 +30,7 @@ public class Usuario
         caloriasIngeridas = 0;
         nombreDelAlimentoMasCalorico = null;
         caloriasDelAlimentoMasCalorico = 0;
+        alimentos = new ArrayList<Alimento>();
     }
     
     /**
@@ -42,6 +46,7 @@ public class Usuario
             caloriasDelAlimentoMasCalorico = alimentoQueCome.getCalorias();
             nombreDelAlimentoMasCalorico = alimentoQueCome.getNombre();
         }
+        alimentos.add(alimentoQueCome);
     }
     
     /**
@@ -110,6 +115,22 @@ public class Usuario
         }
         else{
             System.out.println("Alimento más calórico ingerido por este usuario hasta el momento: " + nombreDelAlimentoMasCalorico + " (" + caloriasDelAlimentoMasCalorico + " calorias por cada 100 gramos)");
+        }
+    }
+    /**
+     * Método que devuelve los datos del alimento que se encuentra en el indice de esa colección.
+     * En caso de que el indice introduccido
+     */
+    public void muestraDatosDeUnAlimentoConsumido(int index)
+    {
+        index = index - 1;
+        if(index >= 0 && index < alimentos.size()) {
+            System.out.println("el alimento comido en la posicion " + (index+1) + " es:");
+            alimentos.get(index).muestraDatos();
+        }
+        else
+        {
+            System.out.println("El indice introduccido no es correcto.");
         }
     }
 }
