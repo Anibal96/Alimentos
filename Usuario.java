@@ -133,4 +133,22 @@ public class Usuario
             System.out.println("El indice introduccido no es correcto.");
         }
     }
+    public void numeroDeVecesComido(String nombreAlimento)
+    {
+        int contador = 0;
+		for (Alimento alimentosConsumidos : alimentos)
+        {
+            if (alimentosConsumidos.getNombre().contains(nombreAlimento))
+            {
+                contador = contador +1;
+            }
+        }
+        if (contador == 0)
+        {
+            System.out.println(" El usuario no ha comido ese alimento");
+        }
+		else{
+			System.out.println("El usuario a comido " + nombreAlimento + " "+ contador + " vez/veces");
+		}
+    }
 }
